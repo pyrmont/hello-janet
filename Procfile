@@ -1,1 +1,1 @@
-web: build/hj serve
+web: build/hj serve $PORT
