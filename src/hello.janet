@@ -31,6 +31,7 @@
     (print "Usage: hj serve <port>")
     (os/exit 1))
 
+  (def host (if (in args 3) (in args 3) "127.0.0.1"))
   (def port (scan-number (in args 2)))
 
   (case (in args 1)
@@ -39,4 +40,5 @@
       (-> (routes "public")
           circlet/router
           circlet/logger)
-      port)))
+      port
+      host)))
