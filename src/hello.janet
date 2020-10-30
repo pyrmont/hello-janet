@@ -11,9 +11,7 @@
 
 (defn- respond
   [output-dir rel-path]
-  (if (nil? (os/stat (string/join [output-dir rel-path] "/") :mode))
-    {:status 404}
-    {:kind :static :root "public"}))
+  {:status 200 :body "Hello, Janet!"})
 
 
 (defn routes
