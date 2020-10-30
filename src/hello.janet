@@ -27,7 +27,8 @@
   ```
   [& args]
 
-  (when (= 1 (length args))
+  (when (= 2 (length args))
+    (print "Usage: hj serve <port>")
     (os/exit 1))
 
   (case (in args 1)
@@ -36,4 +37,4 @@
       (-> (routes "public")
           circlet/router
           circlet/logger)
-      8000)))
+      (in args 2))))
