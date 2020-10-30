@@ -1,1 +1,1 @@
-web: hj serve
+web: buid/hj serve
