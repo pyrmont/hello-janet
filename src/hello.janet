@@ -31,10 +31,12 @@
     (print "Usage: hj serve <port>")
     (os/exit 1))
 
+  (def port (scan-number (in args 2)))
+
   (case (in args 1)
     "serve"
     (circlet/server
       (-> (routes "public")
           circlet/router
           circlet/logger)
-      (in args 2))))
+      port)))
