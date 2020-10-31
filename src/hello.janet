@@ -11,7 +11,11 @@
 
 (defn- respond
   [output-dir rel-path]
-  {:status 200 :body "Hello, Janet!"})
+  (let [name (string/slice rel-path 1)]
+    {:status 200
+     :body (case name
+             "" "Hello, Janet!"
+             (string "Hello, " name "!"))}))
 
 
 (defn routes
